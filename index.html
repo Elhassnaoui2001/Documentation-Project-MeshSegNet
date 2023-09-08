@@ -1,0 +1,1434 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/Elhassnaoui2001/Documentation-Project-MeshSegNet/">
+      
+      
+      
+        <link rel="next" href="Deployment/">
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
+    
+    
+      
+        <title>Project-MeshSegNet</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#entrainement" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Project-MeshSegNet" class="md-header__button md-logo" aria-label="Project-MeshSegNet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Project-MeshSegNet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Entrainement
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Project-MeshSegNet" class="md-nav__button md-logo" aria-label="Project-MeshSegNet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Project-MeshSegNet
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Entrainement
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Entrainement
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-personnalisation-du-dataset" class="md-nav__link">
+    1. Personnalisation du  dataSet
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Personnalisation du dataSet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-que-fait-elle" class="md-nav__link">
+    1.1 Que fait-elle ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-quelles-sont-les-etapes" class="md-nav__link">
+    1.2 Quelles sont les étapes ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-cest-quoi-lutilite-de-ces-donnees" class="md-nav__link">
+    1.3 C'est quoi l'utilité de ces données ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-quel-est-lobjectif" class="md-nav__link">
+    1.4 Quel est l'objectif ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-definition-de-larchitecture-meshsegnet" class="md-nav__link">
+    2. Définition de l’architecture MeshSegNet
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Définition de l’architecture MeshSegNet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-quest-ce-quil-presente" class="md-nav__link">
+    2.1 Qu'est ce qu'il présente ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-quelle-est-la-composition-de-cette-architecture" class="md-nav__link">
+    2.2 Quelle est la composition de cette architecture ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-quel-enchainement-logique-entre-ces-couches" class="md-nav__link">
+    2.3 Quel enchaînement logique entre ces couches ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-quelle-utilite" class="md-nav__link">
+    2.4 Quelle utilité ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-augmentation-de-donnees-pour-des-fichiers-vtp" class="md-nav__link">
+    3. Augmentation de données pour des fichiers VTP
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Augmentation de données pour des fichiers VTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-quest-ce-quil-presente" class="md-nav__link">
+    3.1 Qu'est ce qu'il présente ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-quelle-utilite" class="md-nav__link">
+    3.2 Quelle utilité?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-splitage-des-donnees" class="md-nav__link">
+    4. Splitage des données
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Splitage des données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-quest-ce-quil-presente" class="md-nav__link">
+    4.1 Qu'est ce qu'il présente ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-quelle-utilite" class="md-nav__link">
+    4.2 Quelle utilité?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-processus" class="md-nav__link">
+    4.3 Processus ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-quoi-dautre" class="md-nav__link">
+    4.4 Quoi d’autre ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-processus-dentrainement-et-devaluation-du-modele" class="md-nav__link">
+    5. Processus  d'entraînement et d'évaluation  du modèle
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Processus d'entraînement et d'évaluation du modèle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-quest-ce-quil-presente" class="md-nav__link">
+    5.1 Qu'est ce qu'il présente ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-quels-sont-les-parametres-essentiels-pour-configurer-le-processus-dentrainement-du-modele" class="md-nav__link">
+    5.2 Quels sont les paramètres essentiels pour configurer le processus d'entraînement du modèle?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-la-segmentation-semantique-de-maillages-3d-sans-post-processing" class="md-nav__link">
+    6. La segmentation sémantique de maillages 3D sans post-processing
+  </a>
+  
+    <nav class="md-nav" aria-label="6. La segmentation sémantique de maillages 3D sans post-processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-quest-ce-quil-presente" class="md-nav__link">
+    6.1 Qu'est ce qu'il présente ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-processus" class="md-nav__link">
+    6.2 Processus?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-la-segmentation-semantique-de-maillages-3d-avec-post-processing" class="md-nav__link">
+    7. La segmentation sémantique de maillages 3D avec post-processing
+  </a>
+  
+    <nav class="md-nav" aria-label="7. La segmentation sémantique de maillages 3D avec post-processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-quest-ce-quil-presente" class="md-nav__link">
+    7.1 Qu'est ce qu'il présente ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-processus" class="md-nav__link">
+    7.2 Processus?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-du-framework-meshsegnet-sur-google_drive" class="md-nav__link">
+    Code du Framework MeshSegNet sur Google_drive
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-associe-google_colab" class="md-nav__link">
+    Code associé Google_colab
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Deployment/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-personnalisation-du-dataset" class="md-nav__link">
+    1. Personnalisation du  dataSet
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Personnalisation du dataSet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-que-fait-elle" class="md-nav__link">
+    1.1 Que fait-elle ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-quelles-sont-les-etapes" class="md-nav__link">
+    1.2 Quelles sont les étapes ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-cest-quoi-lutilite-de-ces-donnees" class="md-nav__link">
+    1.3 C'est quoi l'utilité de ces données ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-quel-est-lobjectif" class="md-nav__link">
+    1.4 Quel est l'objectif ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-definition-de-larchitecture-meshsegnet" class="md-nav__link">
+    2. Définition de l’architecture MeshSegNet
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Définition de l’architecture MeshSegNet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-quest-ce-quil-presente" class="md-nav__link">
+    2.1 Qu'est ce qu'il présente ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-quelle-est-la-composition-de-cette-architecture" class="md-nav__link">
+    2.2 Quelle est la composition de cette architecture ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-quel-enchainement-logique-entre-ces-couches" class="md-nav__link">
+    2.3 Quel enchaînement logique entre ces couches ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-quelle-utilite" class="md-nav__link">
+    2.4 Quelle utilité ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-augmentation-de-donnees-pour-des-fichiers-vtp" class="md-nav__link">
+    3. Augmentation de données pour des fichiers VTP
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Augmentation de données pour des fichiers VTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-quest-ce-quil-presente" class="md-nav__link">
+    3.1 Qu'est ce qu'il présente ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-quelle-utilite" class="md-nav__link">
+    3.2 Quelle utilité?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-splitage-des-donnees" class="md-nav__link">
+    4. Splitage des données
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Splitage des données">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-quest-ce-quil-presente" class="md-nav__link">
+    4.1 Qu'est ce qu'il présente ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-quelle-utilite" class="md-nav__link">
+    4.2 Quelle utilité?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-processus" class="md-nav__link">
+    4.3 Processus ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-quoi-dautre" class="md-nav__link">
+    4.4 Quoi d’autre ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-processus-dentrainement-et-devaluation-du-modele" class="md-nav__link">
+    5. Processus  d'entraînement et d'évaluation  du modèle
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Processus d'entraînement et d'évaluation du modèle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-quest-ce-quil-presente" class="md-nav__link">
+    5.1 Qu'est ce qu'il présente ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-quels-sont-les-parametres-essentiels-pour-configurer-le-processus-dentrainement-du-modele" class="md-nav__link">
+    5.2 Quels sont les paramètres essentiels pour configurer le processus d'entraînement du modèle?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-la-segmentation-semantique-de-maillages-3d-sans-post-processing" class="md-nav__link">
+    6. La segmentation sémantique de maillages 3D sans post-processing
+  </a>
+  
+    <nav class="md-nav" aria-label="6. La segmentation sémantique de maillages 3D sans post-processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-quest-ce-quil-presente" class="md-nav__link">
+    6.1 Qu'est ce qu'il présente ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-processus" class="md-nav__link">
+    6.2 Processus?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-la-segmentation-semantique-de-maillages-3d-avec-post-processing" class="md-nav__link">
+    7. La segmentation sémantique de maillages 3D avec post-processing
+  </a>
+  
+    <nav class="md-nav" aria-label="7. La segmentation sémantique de maillages 3D avec post-processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-quest-ce-quil-presente" class="md-nav__link">
+    7.1 Qu'est ce qu'il présente ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-processus" class="md-nav__link">
+    7.2 Processus?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-du-framework-meshsegnet-sur-google_drive" class="md-nav__link">
+    Code du Framework MeshSegNet sur Google_drive
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#code-associe-google_colab" class="md-nav__link">
+    Code associé Google_colab
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<style>
+    .code {
+        background-color: #f0f0f0;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+    *{
+        font-family: 'Your Custom Font Name', sans-serif;
+    }
+</style>
+
+<h1 id="entrainement">Entrainement</h1>
+<h2 id="1-personnalisation-du-dataset">1. Personnalisation du  dataSet</h2>
+<h3 id="11-que-fait-elle">1.1 Que fait-elle ?</h3>
+<p>Chargement, Prétraitement et Construction des échantillons de données à partir de fichiers de maillage 3D au format VTK.  </p>
+<h3 id="12-quelles-sont-les-etapes">1.2 Quelles sont les étapes ?</h3>
+<ul>
+<li>Chargement d'un maillage 3D à partir d'un fichier VTK</li>
+</ul>
+<pre><code>     mesh = load(i_mesh)
+
+</code></pre>
+<ul>
+<li>Extraction des étiquettes à partir des données du maillage.   </li>
+</ul>
+<pre><code>    labels = mesh.celldata['MaterialIds'].astype('int32').reshape(-1, 1)
+</code></pre>
+<ul>
+<li>Effectue diverses opérations de prétraitement sur le maillage, y compris le calcul des normales, la normalisation des données   </li>
+</ul>
+<pre><code>    points = mesh.points()
+    mean_cell_centers = mesh.center_of_mass()
+    points[:, 0:3] -= mean_cell_centers[0:3]
+    ids = np.array(mesh.faces())
+    cells = points[ids].reshape(mesh.ncells, 9).astype(dtype='float32')
+    mesh.compute_normals()
+    normals = mesh.celldata['Normals']
+    barycenters = mesh.cell_centers() 
+    barycenters -= mean_cell_centers[0:3]
+    maxs = points.max(axis=0)
+    mins = points.min(axis=0)
+    means = points.mean(axis=0)
+    stds = points.std(axis=0)
+    nmeans = normals.mean(axis=0)
+    nstds = normals.std(axis=0)
+    for i in range(3):
+        cells[:, i] = (cells[:, i] - means[i]) / stds[i] 
+        cells[:, i+3] = (cells[:, i+3] - means[i]) / stds[i]
+        cells[:, i+6] = (cells[:, i+6] - means[i]) / stds[i]
+        barycenters[:,i] = (barycenters[:,i] - mins[i]) / (maxs[i]-mins[i])
+        normals[:,i] = (normals[:,i] - nmeans[i]) / nstds[i]
+        X = np.column_stack((cells, barycenters, normals))
+        Y = labels
+        X_train = np.zeros([self.patch_size, X.shape[1]], dtype='float32')
+        Y_train = np.zeros([self.patch_size, Y.shape[1]], dtype='int32')
+        S1 = np.zeros([self.patch_size, self.patch_size], dtype='float32')
+        S2 = np.zeros([self.patch_size, self.patch_size], dtype='float32')```
+</code></pre>
+<ul>
+<li>Sélection d'un sous-ensemble d'échantillons positifs (dents) et zéro (gencive) en fonction du nombre de patch_size.   </li>
+</ul>
+<pre><code>    positive_idx = np.argwhere(labels&gt;0)[:, 0] 
+    negative_idx = np.argwhere(labels==0)[:, 0] 
+</code></pre>
+<ul>
+<li>Calcul d'une matrice de distance entre les échantillons sélectionnés.  </li>
+</ul>
+<pre><code>    num_positive = len(positive_idx)
+    if num_positive &gt; self.patch_size:
+        positive_selected_idx = np.random.choice(positive_idx, 
+        size=self.patch_size, replace=False)
+        selected_idx = positive_selected_idx
+    else:   
+        num_negative = self.patch_size - num_positive 
+        positive_selected_idx = np.random.choice(positive_idx, 
+        size=num_positive, replace=False)
+        negative_selected_idx = np.random.choice(negative_idx, 
+        size=num_negative, replace=False)
+        selected_idx = np.concatenate((positive_selected_idx, 
+        negative_selected_idx))
+    selected_idx = np.sort(selected_idx, axis=None)
+    X_train[:] = X[selected_idx, :]
+    Y_train[:] = Y[selected_idx, :]
+    if  torch.cuda.is_available():
+        TX = torch.as_tensor(X_train[:, 9:12], device='cuda')
+        TD = torch.cdist(TX, TX)
+        D = TD.cpu().numpy()
+    else:
+        D = distance_matrix(X_train[:, 9:12], X_train[:, 9:12])
+</code></pre>
+<ul>
+<li>Création des matrices de similarité S1 et S2 basées sur la distance.   </li>
+</ul>
+<pre><code>    S1[D&lt;0.1] = 1.0
+    S1 = S1 / np.dot(np.sum(S1, axis=1, keepdims=True), 
+    np.ones((1, self.patch_size)))
+    S2[D&lt;0.2] = 1.0
+    S2 = S2 / np.dot(np.sum(S2, axis=1, keepdims=True), 
+    np.ones((1, self.patch_size)))
+    X_train = X_train.transpose(1, 0)
+    Y_train = Y_train.transpose(1, 0)
+</code></pre>
+<ul>
+<li>Production d'un échantillon sous forme de dictionnaire PyTorch contenant les données de maillage (cells), les étiquettes (labels),ainsi que les matrices de similarité (A_S et A_L).  </li>
+</ul>
+<pre><code>    sample = {'cells': torch.from_numpy(X_train), 
+              'labels': torch.from_numpy(Y_train),
+              'A_S': torch.from_numpy(S1), 'A_L': torch.from_numpy(S2)}
+</code></pre>
+<h3 id="13-cest-quoi-lutilite-de-ces-donnees">1.3 C'est quoi l'utilité de ces données ?</h3>
+<p>En prévision de l'utilisation d'un modèle de segmentation de maillages 3D appelé MeshSegNet, on envisage de travailler avec des caractéristiques spécifiques des maillages 3D, à savoir les "cells" (représentant les propriétés 3D d'un maillage) ainsi que les matrices de similarité "A_S" et "A_L", et les étiquettes (labels) associées à un échantillon pendant la phase d'entraînement. L'objectif de cette approche est d'exploiter les informations contenues dans les "cells" et les matrices de similarité pour prédire de manière supervisée les étiquettes, ce qui est essentiel pour la tâche de segmentation effectuée  par le modèle MeshSegNet.</p>
+<h3 id="14-quel-est-lobjectif">1.4 Quel est l'objectif ?</h3>
+<ul>
+<li>Préparation des données pour l'apprentissage automatique, où les maillages 3D représentent des objets géométriques.   </li>
+<li>Extraction des étiquettes  des données du maillage pour la classification ou la segmentation.  </li>
+</ul>
+<h2 id="2-definition-de-larchitecture-meshsegnet">2. Définition de l’architecture MeshSegNet</h2>
+<h3 id="21-quest-ce-quil-presente">2.1 Qu'est ce qu'il présente ?</h3>
+<p>Une définition d'une architecture de réseau de neurones appelée MeshSegNet pour effectuer la segmentation de maillages 3D.  </p>
+<h3 id="22-quelle-est-la-composition-de-cette-architecture">2.2 Quelle est la composition de cette architecture ?</h3>
+<p>Une série de couches de convolution, de normalisation et d'opérations non linéaires pour apprendre des représentations significatives à partir des données de maillage.  </p>
+<h3 id="23-quel-enchainement-logique-entre-ces-couches">2.3 Quel enchaînement logique entre ces couches ?</h3>
+<ul>
+<li>Commençant avec la STN3d (Spatial Transformer Network 3D) qui effectue des transformations spatiales sur les données en entrée pour aider à l'alignement des maillages. Ensuite, il passe par plusieurs couches de convolution, chacune suivie d'une normalisation par lots (BatchNorm1d) et d'une fonction d'activation ReLU. Ces couches extraient des caractéristiques pertinentes des données (exploration des données).   </li>
+</ul>
+<pre><code>    class STN3d(nn.Module):
+        def __init__(self, channel):
+            super(STN3d, self).__init__()
+            self.conv1 = torch.nn.Conv1d(channel, 64, 1)
+            self.conv2 = torch.nn.Conv1d(64, 128, 1)
+            self.conv3 = torch.nn.Conv1d(128, 1024, 1)
+            self.fc1 = nn.Linear(1024, 512)
+            self.fc2 = nn.Linear(512, 256)
+            self.fc3 = nn.Linear(256, 9)
+            self.relu = nn.ReLU()
+            self.bn1 = nn.BatchNorm1d(64)
+            self.bn2 = nn.BatchNorm1d(128)
+            self.bn3 = nn.BatchNorm1d(1024)
+            self.bn4 = nn.BatchNorm1d(512)
+            self.bn5 = nn.BatchNorm1d(256)
+        def forward(self, x):
+            batchsize = x.size()[0]
+            x = F.relu(self.bn1(self.conv1(x)))
+            x = F.relu(self.bn2(self.conv2(x)))
+            x = F.relu(self.bn3(self.conv3(x)))
+            x = torch.max(x, 2, keepdim=True)[0]
+            x = x.view(-1, 1024)
+            x = F.relu(self.bn4(self.fc1(x)))
+            x = F.relu(self.bn5(self.fc2(x)))
+            x = self.fc3(x)
+            iden = Variable(torch.from_numpy
+            (np.array([1, 0, 0, 0, 1, 0, 0, 0, 1]).
+            astype(np.float32))).view(1, 9).repeat(
+                batchsize, 1)
+            if x.is_cuda:
+                iden = iden.to(x.get_device())
+            x = x + iden
+            x = x.view(-1, 3, 3)
+            return x
+</code></pre>
+<ul>
+<li>Le modèle comprend également un module appelé STNkd qui est similaire à STN3d mais adapté à une dimension k quelconque.    </li>
+</ul>
+<pre><code>class STNkd(nn.Module):
+    def __init__(self, k=64):
+        super(STNkd, self).__init__()
+        self.conv1 = torch.nn.Conv1d(k, 64, 1)
+        self.conv2 = torch.nn.Conv1d(64, 128, 1)
+        self.conv3 = torch.nn.Conv1d(128, 512, 1)
+        self.fc1 = nn.Linear(512, 256)
+        self.fc2 = nn.Linear(256, 128)
+        self.fc3 = nn.Linear(128, k * k)
+        self.relu = nn.ReLU()
+        self.bn1 = nn.BatchNorm1d(64)
+        self.bn2 = nn.BatchNorm1d(128)
+        self.bn3 = nn.BatchNorm1d(512)
+        self.bn4 = nn.BatchNorm1d(256)
+        self.bn5 = nn.BatchNorm1d(128)
+        self.k = k
+    def forward(self, x):
+        batchsize = x.size()[0]
+        x = F.relu(self.bn1(self.conv1(x)))
+        x = F.relu(self.bn2(self.conv2(x)))
+        x = F.relu(self.bn3(self.conv3(x)))
+        x = torch.max(x, 2, keepdim=True)[0]
+        x = x.view(-1, 512)
+        x = F.relu(self.bn4(self.fc1(x)))
+        x = F.relu(self.bn5(self.fc2(x)))
+        x = self.fc3(x)
+        iden = Variable(torch.from_numpy(np.eye(self.k).flatten().
+        astype(np.float32))).view(1, self.k * self.k).repeat(batchsize, 1)
+        if x.is_cuda:
+            iden = iden.to(x.get_device())
+        x = x + iden
+        x = x.view(-1, self.k, self.k)
+        return x
+</code></pre>
+<ul>
+<li>Le processus commence par l'extraction de caractéristiques par les couches de convolution, suivi de l'application de MLP-1 ou MLP-2.Cette étape est cruciale pour améliorer la capacité du modèle à effectuer une segmentation précise, car elle permet d'apprendre des caractéristiques distinctives tout en capturant des relations complexes entre les données. Ensuite, les caractéristiques ainsi obtenues sont combinées avec les matrices de similarité à l'aide des couches GLM-1 ou GLM-2. Enfin, pour intégrer différentes informations de manière cohérente, le modèle utilise des couches de fusion et d'upsampling. Ce processus global vise à créer une représentation riche et discriminante des données 3D tout en exploitant les informations de similarité pour la tâche de segmentation.   </li>
+</ul>
+<pre><code>class MeshSegNet(nn.Module):
+    def __init__(self, num_classes=15, num_channels=15, 
+                 with_dropout=True, dropout_p=0.5):
+        super(MeshSegNet, self).__init__()
+        self.num_classes = num_classes
+        self.num_channels = num_channels
+        self.with_dropout = with_dropout
+        self.dropout_p = dropout_p
+
+        # MLP-1 [64, 64]
+        self.mlp1_conv1 = torch.nn.Conv1d(self.num_channels, 64, 1)
+        self.mlp1_conv2 = torch.nn.Conv1d(64, 64, 1)
+        self.mlp1_bn1 = nn.BatchNorm1d(64)
+        self.mlp1_bn2 = nn.BatchNorm1d(64)
+        # FTM (feature-transformer module)
+        self.fstn = STNkd(k=64)
+        # GLM-1 (graph-contrained learning modulus)
+        self.glm1_conv1_1 = torch.nn.Conv1d(64, 32, 1)
+        self.glm1_conv1_2 = torch.nn.Conv1d(64, 32, 1)
+        self.glm1_bn1_1 = nn.BatchNorm1d(32)
+        self.glm1_bn1_2 = nn.BatchNorm1d(32)
+        self.glm1_conv2 = torch.nn.Conv1d(32+32, 64, 1)
+        self.glm1_bn2 = nn.BatchNorm1d(64)
+        # MLP-2
+        self.mlp2_conv1 = torch.nn.Conv1d(64, 64, 1)
+        self.mlp2_bn1 = nn.BatchNorm1d(64)
+        self.mlp2_conv2 = torch.nn.Conv1d(64, 128, 1)
+        self.mlp2_bn2 = nn.BatchNorm1d(128)
+        self.mlp2_conv3 = torch.nn.Conv1d(128, 512, 1)
+        self.mlp2_bn3 = nn.BatchNorm1d(512)
+        # GLM-2 (graph-contrained learning modulus)
+        self.glm2_conv1_1 = torch.nn.Conv1d(512, 128, 1)
+        self.glm2_conv1_2 = torch.nn.Conv1d(512, 128, 1)
+        self.glm2_conv1_3 = torch.nn.Conv1d(512, 128, 1)
+        self.glm2_bn1_1 = nn.BatchNorm1d(128)
+        self.glm2_bn1_2 = nn.BatchNorm1d(128)
+        self.glm2_bn1_3 = nn.BatchNorm1d(128)
+        self.glm2_conv2 = torch.nn.Conv1d(128*3, 512, 1)
+        self.glm2_bn2 = nn.BatchNorm1d(512)
+        # MLP-3
+        self.mlp3_conv1 = torch.nn.Conv1d(64+512+512+512, 256, 1)
+        self.mlp3_conv2 = torch.nn.Conv1d(256, 256, 1)
+        self.mlp3_bn1_1 = nn.BatchNorm1d(256)
+        self.mlp3_bn1_2 = nn.BatchNorm1d(256)
+        self.mlp3_conv3 = torch.nn.Conv1d(256, 128, 1)
+        self.mlp3_conv4 = torch.nn.Conv1d(128, 128, 1)
+        self.mlp3_bn2_1 = nn.BatchNorm1d(128)
+        self.mlp3_bn2_2 = nn.BatchNorm1d(128)
+        # output
+        self.output_conv = torch.nn.Conv1d(128, self.num_classes, 1)
+        if self.with_dropout:
+            self.dropout = nn.Dropout(p=self.dropout_p)
+
+</code></pre>
+<h3 id="24-quelle-utilite">2.4 Quelle utilité ?</h3>
+<p>Le modèle MeshSegNet est conçu pour prendre en entrée des données de maillage avec différentes dimensions et effectuer une segmentation en plusieurs classes.  </p>
+<h2 id="3-augmentation-de-donnees-pour-des-fichiers-vtp">3. Augmentation de données pour des fichiers VTP</h2>
+<h3 id="31-quest-ce-quil-presente">3.1 Qu'est ce qu'il présente ?</h3>
+<p>Une augmentation de données pour des fichiers VTP (VTK PolyData) utilisés dans un contexte de traitement de maillage 3D.  </p>
+<h3 id="32-quelle-utilite">3.2 Quelle utilité?</h3>
+<p>Génération des versions augmentées de fichiers VTP 3D en appliquant des transformations aléatoires de rotation, translation 
+et mise à l'échelle à chaque échantillon d'origine. Ces augmentations peuvent être utilisées pour enrichir un ensemble de données 
+d'entraînement pour l'apprentissage automatique, en particulier dans le contexte de la vision par ordinateur 3D.  </p>
+<pre><code>    def GetVTKTransformationMatrix(rotate_X=[-180, 180], rotate_Y=[-180, 180], 
+                                   rotate_Z=[-180, 180],
+                                translate_X=[-10, 10], translate_Y=[-10, 10], 
+                                translate_Z=[-10, 10],
+                                scale_X=[0.8, 1.2], scale_Y=[0.8, 1.2], 
+                                scale_Z=[0.8, 1.]):
+</code></pre>
+<h2 id="4-splitage-des-donnees">4. Splitage des données</h2>
+<h3 id="41-quest-ce-quil-presente">4.1 Qu'est ce qu'il présente ?</h3>
+<p>Un splitage des données en données d'entraînement et de validation.  </p>
+<h3 id="42-quelle-utilite">4.2 Quelle utilité?</h3>
+<p>Pour préparer nos données en vue de l'entraînement du modèle MeshSegNet, nous effectuons un processus de division des ensembles 
+de fichiers VTP augmentés en listes distinctes pour l'entraînement et la validation. Ces listes joueront un rôle crucial dans 
+le chargement des données lors de la phase d'entraînement de notre modèle d'apprentissage automatique.  </p>
+<h3 id="43-processus">4.3 Processus ?</h3>
+<p>Pour expliquer davantage cette division, nous pouvons la décomposer en trois catégories principales : les données d'entraînement, les données de validation et les données de test.  </p>
+<ul>
+<li>Les données d'entraînement représentent la portion du jeu de données qui est spécifiquement utilisée pour enseigner au modèle. Ces données servent de matériau d'apprentissage, permettant au modèle d'acquérir des compétences et des connaissances.    </li>
+<li>Les données de validation constituent un ensemble distinct de données qui ne sont pas utilisées pendant le processus d'entraînement  proprement dit. Elles sont réservées exclusivement à l'évaluation de la performance du modèle tout au long de son apprentissage. Ces données n'ont jamais été vues par le modèle auparavant, et leur utilisation permet de détecter toute tendance au surapprentissage.Le modèle est régulièrement évalué sur ces données de validation pendant l'entraînement.  </li>
+<li>Enfin, nous avons également isolé un jeu de données de test, composé de deux échantillons distincts. Ces données n'ont jamais été exposées au modèle ni pendant la phase d'entraînement ni lors de l'évaluation sur les données de validation. L'objectif principal de cet ensemble de test est de mesurer la performance finale du modèle de manière objective.  </li>
+</ul>
+<h3 id="44-quoi-dautre">4.4 Quoi d’autre ?</h3>
+<p>Pour garantir la qualité du processus de division des données, nous avons adopté une technique avancée appelée cross-validation ou validation croisée, qui implique un mélange (shuffle) des données avant la division. Cette approche vise à éviter la création des sous-ensembles à partir de données triés ou structurées d'une manière particulière. Cette démarche est essentielle pour prévenir tout biais potentiel dans l'évaluation du modèle, en évitant que les sous-ensembles  contiennent des données similaires ou provenant de la même classe.  </p>
+<pre><code>    train_size = 0.8  
+    train_list, val_list = train_test_split(sample_list, train_size=train_size, shuffle=True)
+</code></pre>
+<h2 id="5-processus-dentrainement-et-devaluation-du-modele">5. Processus  d'entraînement et d'évaluation  du modèle</h2>
+<h3 id="51-quest-ce-quil-presente">5.1 Qu'est ce qu'il présente ?</h3>
+<p>Un processus  d'entraînement et d'évaluation d'un modèle de segmentation pour des données de maillage 3D.  </p>
+<h3 id="52-quels-sont-les-parametres-essentiels-pour-configurer-le-processus-dentrainement-du-modele">5.2 Quels sont les paramètres essentiels pour configurer le processus d'entraînement du modèle?</h3>
+<ul>
+<li>num_classes: Ce paramètre spécifie le nombre de classes ou de catégories différentes que le modèle de segmentation doit prédire. Dans ce cas, il y a 15 classes différentes.   </li>
+<li>num_channels: Ce paramètre indique le nombre de canaux d'entrée que le modèle utilise pour chaque exemple de données. Les canaux peuvent correspondre à différentes caractéristiques ou informations dans les données. Ici, il y a 15 canaux d'entrée.   </li>
+<li>num_epochs : C'est le nombre total d'époques d'entraînement que le modèle va parcourir. Une époque représente une passe complète à travers l'ensemble de données d'entraînement.    </li>
+<li>train_batch_size: Le lot d'entraînement (ou mini-lot) est la quantité d'exemples de données utilisée à chaque mise à jour du modèle pendant l'entraînement.   </li>
+<li>val_batch_size : C'est similaire au lot d'entraînement, mais cela s'applique aux données de validation.    </li>
+<li>patch-size : Des régions d'intérêt dans les données utilisées pour l'entraînement du modèle de segmentation.    </li>
+</ul>
+<pre><code>    num_classes = 15
+    num_channels = 15 
+    num_epochs = 20
+    train_batch_size = 2
+    val_batch_size = 2
+    num_batches_to_print = 20
+</code></pre>
+<pre><code>    training_dataset = Mesh_Dataset(data_list_path=train_list,
+                                    num_classes=num_classes,
+                                    patch_size=9000)
+    val_dataset = Mesh_Dataset(data_list_path=val_list,
+                               num_classes=num_classes,
+                               patch_size=9000)
+</code></pre>
+<p>Ces paramètres sont essentiels pour configurer le processus d'entraînement du modèle, notamment le nombre de classes prédites, la taille des lots, le nombre d'époques, le patch-size ... Ils peuvent être ajustés en fonction des besoins spécifiques de la tâche de segmentation et des ressources matérielles disponibles.  </p>
+<h2 id="6-la-segmentation-semantique-de-maillages-3d-sans-post-processing">6. La segmentation sémantique de maillages 3D sans post-processing</h2>
+<h3 id="61-quest-ce-quil-presente">6.1 Qu'est ce qu'il présente ?</h3>
+<p>La segmentation sémantique de maillages 3D en utilisant un modèle de réseau de neurones pré-entraîné et sauvegarde les résultats 
+dans des fichiers de maillage de sortie.  </p>
+<h3 id="62-processus">6.2 Processus?</h3>
+<ul>
+<li>pré-traitement (pre-processing) : Ces étapes de pré-traitement sont importantes pour préparer les données du maillage de manière appropriée avant de les utiliser comme entrée pour le modèle de segmentation. Elles garantissent que les données sont dans un format compatible avec le modèle et peuvent améliorer la qualité des prédictions du modèle.   </li>
+<li>Downsampling (Réduction de l'échantillonnage): Si le maillage d'entrée a plus de 10 000 cellules, il est réduit en échantillonnant aléatoirement un sous-ensemble de 10 000 cellules. Cela permet de gérer des maillages de grande taille de manière plus efficace.   </li>
+</ul>
+<pre><code>    if mesh.ncells &gt; 10000:
+        print('\tDownsampling...')
+        target_num = 10000
+        ratio = target_num/mesh.ncells 
+        mesh_d = mesh.clone()
+        mesh_d.decimate(fraction=ratio)
+        predicted_labels_d = np.zeros([mesh_d.ncells, 1], dtype=np.int32)
+    else:
+        mesh_d = mesh.clone()
+        predicted_labels_d = np.zeros([mesh_d.ncells, 1], dtype=np.int32)
+</code></pre>
+<ul>
+<li>Normalisation des coordonnées : Les coordonnées des points du maillage sont déplacées pour que le centre de masse du maillage soit à l'origine (0, 0, 0). Cela permet de centrer le maillage et d'améliorer la stabilité numérique lors de la transformation en tenseurs pour le modèle.   </li>
+</ul>
+<pre><code>    points = mesh_d.points()
+    mean_cell_centers = mesh_d.center_of_mass()
+    points[:, 0:3] -= mean_cell_centers[0:3]
+    ids = np.array(mesh_d.faces())
+    cells = points[ids].reshape(mesh_d.ncells, 9).astype(dtype='float32')
+</code></pre>
+<ul>
+<li>Normalisation des données : Les coordonnées des points et des cellules sont normalisées en soustrayant la moyenne et en divisant par l'écart type. Cela met à l'échelle les données pour les rendre compatibles avec le modèle et réduit les problèmes liés à l'échelle.    </li>
+</ul>
+<pre><code>    maxs = points.max(axis=0)
+    mins = points.min(axis=0)
+    means = points.mean(axis=0)
+    stds = points.std(axis=0)
+    nmeans = normals.mean(axis=0)
+    nstds = normals.std(axis=0)
+    for i in range(3):
+        cells[:, i] = (cells[:, i] - means[i]) / stds[i] #point 1
+        cells[:, i+3] = (cells[:, i+3] - means[i]) / stds[i] #point 2
+        cells[:, i+6] = (cells[:, i+6] - means[i]) / stds[i] #point 3
+        barycenters[:,i] = (barycenters[:,i] - mins[i]) / (maxs[i]-mins[i])
+        normals[:,i] = (normals[:,i] - nmeans[i]) / nstds[i]
+    X = np.column_stack((cells, barycenters, normals))
+</code></pre>
+<ul>
+<li>Calcul des matrices d'adjacence (A_S et A_L) : Des matrices d'adjacence sont calculées en fonction des distances entre les points du maillage. Ces matrices sont utilisées ultérieurement dans le modèle pour prendre en compte la connectivité entre les cellules.  </li>
+</ul>
+<pre><code>    A_S = np.zeros([X.shape[0], X.shape[0]], dtype='float32')
+    A_L = np.zeros([X.shape[0], X.shape[0]], dtype='float32')
+    D = distance_matrix(X[:, 9:12], X[:, 9:12])
+    A_S[D&lt;0.1] = 1.0
+    A_S = A_S / np.dot(np.sum(A_S, axis=1, keepdims=True), 
+                           np.ones((1, X.shape[0])))
+    A_L[D&lt;0.2] = 1.0
+    A_L = A_L / np.dot(np.sum(A_L, axis=1, keepdims=True), 
+                         np.ones((1, X.shape[0])))
+</code></pre>
+<ul>
+<li>Prédictions avec le modèle   <br />
+  _ Les données préparées sont converties en tenseurs PyTorch et utilisées en entrée pour le modèle MeshSegNet.  </li>
+</ul>
+<pre><code>    X = X.transpose(1, 0)
+    X = X.reshape([1, X.shape[0], X.shape[1]])
+    X = torch.from_numpy(X).to(device, dtype=torch.float)
+    A_S = A_S.reshape([1, A_S.shape[0], A_S.shape[1]])
+    A_L = A_L.reshape([1, A_L.shape[0], A_L.shape[1]])
+    A_S = torch.from_numpy(A_S).to(device, dtype=torch.float)
+    A_L = torch.from_numpy(A_L).to(device, dtype=torch.float)
+    tensor_prob_output = model(X, A_S, A_L).to(device, dtype=torch.float)
+</code></pre>
+<p>_ Le modèle produit des probabilités de classe pour chaque cellule du maillage, et ces probabilités sont converties en étiquettes de segmentation.   </p>
+<pre><code>    patch_prob_output = tensor_prob_output.cpu().numpy()
+    for i_label in range(num_classes):
+        predicted_labels_d[np.argmax(patch_prob_output[0, :], 
+                               axis=-1)==i_label] = i_label
+</code></pre>
+<h2 id="7-la-segmentation-semantique-de-maillages-3d-avec-post-processing">7. La segmentation sémantique de maillages 3D avec post-processing</h2>
+<h3 id="71-quest-ce-quil-presente">7.1 Qu'est ce qu'il présente ?</h3>
+<p>La segmentation sémantique des maillages 3D en utilisant un modèle pré-entraîné (MeshSegNet) et effectue ensuite une série d'étapes de post-traitement pour affiner les prédictions et réaliser un échantillonnage des prédictions.  </p>
+<h3 id="72-processus">7.2 Processus?</h3>
+<ul>
+<li>Downsampling (réduction de l'échantillonnage) : Le code commence par réduire l'échantillonnage en utilisant la méthode de décimation pour réduire le nombre de cellules dans le modèle 3D. Cela permet de simplifier le modèle tout en maintenant la structure globale.    </li>
+</ul>
+<pre><code>    print('\tDownsampling...')
+    target_num = 10000
+    ratio = target_num/mesh.ncells
+    mesh_d = mesh.clone()
+    mesh_d.decimate(fraction=ratio)
+    predicted_labels_d = np.zeros([mesh_d.ncells, 1], dtype=np.int32)
+</code></pre>
+<ul>
+<li>Normalisation des données : Les données sont normalisées en soustrayant la moyenne et en divisant par l'écart type pour les points et les normales. Cela garantit que les données ont une échelle cohérente.   </li>
+</ul>
+<pre><code>    maxs = points.max(axis=0)
+        mins = points.min(axis=0)
+        means = points.mean(axis=0)
+        stds = points.std(axis=0)
+        nmeans = normals.mean(axis=0)
+        nstds = normals.std(axis=0)
+        for i in range(3):
+            cells[:, i] = (cells[:, i] - means[i]) / stds[i] 
+            cells[:, i+3] = (cells[:, i+3] - means[i]) / stds[i] 
+            cells[:, i+6] = (cells[:, i+6] - means[i]) / stds[i] 
+            barycenters[:,i] = (barycenters[:,i] - mins[i]) / (maxs[i]-mins[i])
+            normals[:,i] = (normals[:,i] - nmeans[i]) / nstds[i]
+</code></pre>
+<ul>
+<li>Prédiction initiale : Le modèle effectue une première prédiction des étiquettes pour chaque cellule du modèle réduit.   </li>
+</ul>
+<pre><code>    for i_label in range(num_classes):
+        predicted_labels_d[np.argmax(patch_prob_output[0, :], 
+                            axis=-1)==i_label] = i_label
+        mesh2 = mesh_d.clone()
+        mesh2.celldata['Label'] = predicted_labels_d
+        vedo.write(mesh2, os.path.join(output_path, 
+        '{}_d_predicted.vtp'.format(i_sample[:-4])))
+</code></pre>
+<ul>
+<li>Refinement avec pygco : usage de l'algorithme d'optimisation par coupure de graphe (pygco - Graph Cuts Optimization) pour affiner les étiquettes prédites. Cette technique d'optimisation considère à la fois les valeurs unaires et les relations entre les paires d'étiquettes afin d'améliorer la précision des étiquettes. En général, cet algorithme se base sur des coûts unaires, lesquels sont déterminés en fonction des probabilités de classe prédites par le modèle. De plus, il prend en compte des coûts associés aux paires, lesquels sont calculés en fonction des relations spatiales entre les cellules. L'objectif est de trouver la configuration optimale des étiquettes qui soit cohérente avec les informations fournies par le modèle et les relations spatiales existant entre les cellules.   </li>
+</ul>
+<pre><code>    print('\tRefining by pygco...')
+    round_factor = 100
+    patch_prob_output[patch_prob_output&lt;1.0e-6] = 1.0e-6
+
+    unaries = -round_factor * np.log10(patch_prob_output)
+    unaries = unaries.astype(np.int32)
+    unaries = unaries.reshape(-1, num_classes)
+
+    pairwise = (1 - np.eye(num_classes, dtype=np.int32))
+
+    normals = mesh_d.celldata['Normals'].copy() 
+    barycenters = mesh_d.cell_centers() 
+    cell_ids = np.asarray(mesh_d.faces())
+
+    lambda_c = 30
+    edges = np.empty([1, 3], order='C')
+    for i_node in range(cells.shape[0]):
+        nei = np.sum(np.isin(cell_ids, cell_ids[i_node, :]), axis=1)
+        nei_id = np.where(nei==2)
+        for i_nei in nei_id[0][:]:
+            if i_node &lt; i_nei:
+                cos_theta = np.dot(normals[i_node, 0:3], normals[i_nei, 0:3])/
+                np.linalg.norm(normals[i_node, 0:3])/
+                                        np.linalg.norm(normals[i_nei, 0:3])
+                if cos_theta &gt;= 1.0:
+                    cos_theta = 0.9999
+                    theta = np.arccos(cos_theta)
+                    phi = np.linalg.norm
+                    (barycenters[i_node, :] - barycenters[i_nei, :])
+                    if theta &gt; np.pi/2.0:
+                        edges = np.concatenate((edges, np.array([i_node, i_nei, 
+                        -np.log10(theta/np.pi)*phi]).reshape(1, 3)), axis=0)
+                    else:
+                        beta = 1 + np.linalg.norm(np.dot(normals[i_node, 0:3], 
+                        normals[i_nei, 0:3]))
+                        edges = np.concatenate((edges, np.array([i_node, i_nei, 
+                        -beta*np.log10(theta/np.pi)*phi]).reshape(1, 3)), 
+                        axis=0)
+    edges = np.delete(edges, 0, 0)
+    edges[:, 2] *= lambda_c*round_factor
+    edges = edges.astype(np.int32)
+
+    refine_labels = cut_from_graph(edges, unaries, pairwise)
+    refine_labels = refine_labels.reshape([-1, 1])
+
+    mesh3 = mesh_d.clone()
+    mesh3.celldata['Label'] = refine_labels
+    vedo.write(mesh3, os.path.join(output_path, 
+    '{}_d_predicted_refined.vtp'.format(i_sample[:-4])))
+</code></pre>
+<ul>
+<li>Upsampling :L'opération d'augmentation de l'échantillonnage vise à fournir des étiquettes pour l'ensemble du modèle 3D. Deux approches d'augmentation de l'échantillonnage sont disponibles, à savoir SVM et KNN. Cependant, avant de pouvoir effectuer cette augmentation de l'échantillonnage, une préparation préliminaire des données est nécessaire pour chaque méthode d'augmentation. Cette préparation inclut le calcul des caractéristiques des cellules ou des éléments du modèle réduit, appelés barycenters, qui serviront d'entrée pour le processus d'augmentation.   </li>
+</ul>
+<pre><code>    print('\tUpsampling...')
+    if mesh.ncells &gt; 50000:
+        target_num = 50000 
+        ratio = target_num/mesh.ncells 
+        mesh.decimate(fraction=ratio)
+        print('Original contains too many cells, simpify to {} cells'
+                                .format(mesh.ncells))
+
+    barycenters = mesh3.cell_centers() 
+    fine_barycenters = mesh.cell_centers() 
+
+    if upsampling_method == 'SVM':
+        clf = SVC(kernel='rbf', gamma='auto')
+        clf.fit(barycenters, np.ravel(refine_labels))
+        fine_labels = clf.predict(fine_barycenters)
+        fine_labels = fine_labels.reshape(-1, 1)
+    elif upsampling_method == 'KNN':
+        neigh = KNeighborsClassifier(n_neighbors=3)
+        neigh.fit(barycenters, np.ravel(refine_labels))
+        fine_labels = neigh.predict(fine_barycenters)
+        fine_labels = fine_labels.reshape(-1, 1)
+
+        mesh.celldata['Label'] = fine_labels
+        vedo.write(mesh, os.path.join(output_path, 
+        '{}_predicted_refined.vtp'.format(i_sample[:-4])))
+</code></pre>
+<p>Le post-traitement, également connu sous le nom de post-processing en anglais, est une étape qui suit généralement une tâche de traitement ou d'analyse des données. Elle vise à améliorer, corriger ou affiner les résultats obtenus après l'exécution d'un algorithme ou d'une opération principale.</p>
+<h2 id="code-du-framework-meshsegnet-sur-google_drive"><a href="https://drive.google.com/drive/folders/1yylHXtFQhfyE5IquyC3Bh3W8z6SAOogB?usp=sharing">Code du Framework MeshSegNet sur Google_drive</a></h2>
+<h2 id="code-associe-google_colab"><a href="https://colab.research.google.com/drive/1U9Ks_XM78fF0XLDhhbi9LuZ1HuhiFjRW?usp=sharing">Code associé Google_colab</a></h2>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1400 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/Elhassnaoui2001/Documentation-Project-MeshSegNet/Deployment/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../about/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.2.8">
+    
+    
+      
+        <title>Deployment - Project-MeshSegNet</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.046329b4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#bienvenue-dans-notre-documentation-pour-le-deploiement" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Project-MeshSegNet" class="md-header__button md-logo" aria-label="Project-MeshSegNet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Project-MeshSegNet
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Deployment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Project-MeshSegNet" class="md-nav__button md-logo" aria-label="Project-MeshSegNet" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Project-MeshSegNet
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entrainement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Deployment
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fonctionnalites-du-projet" class="md-nav__link">
+    Fonctionnalités du Projet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-et-installation" class="md-nav__link">
+    Configuration et Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration et Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-configuration-de-lenvironnement-virtuel" class="md-nav__link">
+    1. Configuration de l'environnement virtuel
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Configuration de l'environnement virtuel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-installation-de-loutil-virtualenv" class="md-nav__link">
+    -Installation de l'outil  virtualenv:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-creation-de-lenvironnement-virtuel" class="md-nav__link">
+    -Création de l'environnement virtuel:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-activation-de-lenvironnement-virtuel" class="md-nav__link">
+    -Activation de l'environnement virtuel:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-installation-backend" class="md-nav__link">
+    2. Installation Backend
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Installation Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-installation-de-flask" class="md-nav__link">
+    -Installation de Flask:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-installation-des-dependances-python" class="md-nav__link">
+    -Installation des dépendances Python:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-installation-frontend" class="md-nav__link">
+    3. Installation Frontend
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Installation Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-installation-de-nodejs-et-npm" class="md-nav__link">
+    - Installation de Node.js et npm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    Frontend
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1structure-du-frontend" class="md-nav__link">
+    1.Structure du Frontend
+  </a>
+  
+    <nav class="md-nav" aria-label="1.Structure du Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vue-densemble" class="md-nav__link">
+    Vue d'ensemble
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2interface-utilisateur" class="md-nav__link">
+    2.Interface Utilisateur
+  </a>
+  
+    <nav class="md-nav" aria-label="2.Interface Utilisateur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#page-daccueil" class="md-nav__link">
+    Page d'Accueil
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-dinformations" class="md-nav__link">
+    Page d'informations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-de-contact" class="md-nav__link">
+    Page de contact
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-de-segmentation" class="md-nav__link">
+    Page de Segmentation.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    backend
+  </a>
+  
+    <nav class="md-nav" aria-label="backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-outils-necessaires" class="md-nav__link">
+    lES OUTILS NECESSAIRES
+  </a>
+  
+    <nav class="md-nav" aria-label="lES OUTILS NECESSAIRES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-importations-des-bibliotheques" class="md-nav__link">
+    1. Importations des bibliothèques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-configuration-de-lapplication-flask" class="md-nav__link">
+    2. Configuration de l'application Flask
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-variables-globales" class="md-nav__link">
+    3. Variables globales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-de-lapplication" class="md-nav__link">
+    PROCESS DE L'APPLICATION
+  </a>
+  
+    <nav class="md-nav" aria-label="PROCESS DE L'APPLICATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-chargement-du-modele-pre-entraine" class="md-nav__link">
+    1. Chargement du modèle pré-entraîné
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fonction-de-traitement-de-la-prediction" class="md-nav__link">
+    2. Fonction de traitement de la prédiction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-telechargement-de-fichiers" class="md-nav__link">
+    3. Téléchargement de fichiers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-benchmarking-des-technologies-utilisees" class="md-nav__link">
+    Le Benchmarking des Technologies Utilisées
+  </a>
+  
+    <nav class="md-nav" aria-label="Le Benchmarking des Technologies Utilisées">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-flask-vs-django-pour-le-backend" class="md-nav__link">
+    1. Flask vs. Django (pour le backend)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-reactjs-vs-angular-vs-vuejs-pour-le-frontend" class="md-nav__link">
+    2. React.js vs. Angular vs. Vue.js (pour le frontend)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vtkjs-vs-threejs-pour-la-visualisation-3d" class="md-nav__link">
+    3. VTK.js vs. Three.js (pour la visualisation 3D) :
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualisation-3d-avec-vtkjs" class="md-nav__link">
+    visualisation 3D avec VTK.js
+  </a>
+  
+    <nav class="md-nav" aria-label="visualisation 3D avec VTK.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-qui-ce-que-cest-rt-quelle-utilite" class="md-nav__link">
+    1. Qui ce que c'est rt quelle utilité?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-quels-avantages" class="md-nav__link">
+    2. Quels avantages ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FAQ/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fonctionnalites-du-projet" class="md-nav__link">
+    Fonctionnalités du Projet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-et-installation" class="md-nav__link">
+    Configuration et Installation
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration et Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-configuration-de-lenvironnement-virtuel" class="md-nav__link">
+    1. Configuration de l'environnement virtuel
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Configuration de l'environnement virtuel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-installation-de-loutil-virtualenv" class="md-nav__link">
+    -Installation de l'outil  virtualenv:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-creation-de-lenvironnement-virtuel" class="md-nav__link">
+    -Création de l'environnement virtuel:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-activation-de-lenvironnement-virtuel" class="md-nav__link">
+    -Activation de l'environnement virtuel:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-installation-backend" class="md-nav__link">
+    2. Installation Backend
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Installation Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-installation-de-flask" class="md-nav__link">
+    -Installation de Flask:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#-installation-des-dependances-python" class="md-nav__link">
+    -Installation des dépendances Python:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-installation-frontend" class="md-nav__link">
+    3. Installation Frontend
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Installation Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-installation-de-nodejs-et-npm" class="md-nav__link">
+    - Installation de Node.js et npm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    Frontend
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1structure-du-frontend" class="md-nav__link">
+    1.Structure du Frontend
+  </a>
+  
+    <nav class="md-nav" aria-label="1.Structure du Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vue-densemble" class="md-nav__link">
+    Vue d'ensemble
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2interface-utilisateur" class="md-nav__link">
+    2.Interface Utilisateur
+  </a>
+  
+    <nav class="md-nav" aria-label="2.Interface Utilisateur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#page-daccueil" class="md-nav__link">
+    Page d'Accueil
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-dinformations" class="md-nav__link">
+    Page d'informations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-de-contact" class="md-nav__link">
+    Page de contact
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#page-de-segmentation" class="md-nav__link">
+    Page de Segmentation.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    backend
+  </a>
+  
+    <nav class="md-nav" aria-label="backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-outils-necessaires" class="md-nav__link">
+    lES OUTILS NECESSAIRES
+  </a>
+  
+    <nav class="md-nav" aria-label="lES OUTILS NECESSAIRES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-importations-des-bibliotheques" class="md-nav__link">
+    1. Importations des bibliothèques
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-configuration-de-lapplication-flask" class="md-nav__link">
+    2. Configuration de l'application Flask
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-variables-globales" class="md-nav__link">
+    3. Variables globales
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#process-de-lapplication" class="md-nav__link">
+    PROCESS DE L'APPLICATION
+  </a>
+  
+    <nav class="md-nav" aria-label="PROCESS DE L'APPLICATION">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-chargement-du-modele-pre-entraine" class="md-nav__link">
+    1. Chargement du modèle pré-entraîné
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-fonction-de-traitement-de-la-prediction" class="md-nav__link">
+    2. Fonction de traitement de la prédiction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-telechargement-de-fichiers" class="md-nav__link">
+    3. Téléchargement de fichiers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-benchmarking-des-technologies-utilisees" class="md-nav__link">
+    Le Benchmarking des Technologies Utilisées
+  </a>
+  
+    <nav class="md-nav" aria-label="Le Benchmarking des Technologies Utilisées">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-flask-vs-django-pour-le-backend" class="md-nav__link">
+    1. Flask vs. Django (pour le backend)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-reactjs-vs-angular-vs-vuejs-pour-le-frontend" class="md-nav__link">
+    2. React.js vs. Angular vs. Vue.js (pour le frontend)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-vtkjs-vs-threejs-pour-la-visualisation-3d" class="md-nav__link">
+    3. VTK.js vs. Three.js (pour la visualisation 3D) :
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualisation-3d-avec-vtkjs" class="md-nav__link">
+    visualisation 3D avec VTK.js
+  </a>
+  
+    <nav class="md-nav" aria-label="visualisation 3D avec VTK.js">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-qui-ce-que-cest-rt-quelle-utilite" class="md-nav__link">
+    1. Qui ce que c'est rt quelle utilité?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-quels-avantages" class="md-nav__link">
+    2. Quels avantages ?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="bienvenue-dans-notre-documentation-pour-le-deploiement">Bienvenue dans notre documentation pour le déploiement</h1>
+<h2 id="fonctionnalites-du-projet">Fonctionnalités du Projet</h2>
+<p>La partie de déploiement de notre projet est une étape cruciale pour réaliser des prédictions sur des objets 3D au format .vtp ou .obj et les visualiser dans notre site web. Cette phase est le pivot central de notre système, permettant aux utilisateurs de tirer pleinement parti de la technologie 3D pour une expérience enrichissante.</p>
+<p>Notre objectif principal est d'offrir aux utilisateurs la capacité de télécharger des fichiers 3D, de les soumettre à un processus de prédiction, puis de visualiser les résultats de manière interactive sur notre site web. Pour atteindre cet objectif, nous avons mis en place une architecture en deux parties : le backend et le frontend.</p>
+<p><strong>La partie backend</strong> : assure le traitement des données, y compris la prédiction à l'aide du modèle MeshSegNet.</p>
+<p><strong>la partie frontend</strong> :offre une interface conviviale pour les utilisateurs</p>
+<h2 id="configuration-et-installation">Configuration et Installation</h2>
+<h3 id="1-configuration-de-lenvironnement-virtuel">1. Configuration de l'environnement virtuel</h3>
+<p>Un environnement virtuel est un environnement Python isolé qui permet de gérer les
+dépendances spécifiques à un projet sans interférer avec d'autres projets Python sur le
+même système. Voici comment créer et configurer un environnement virtuel pour votre
+projet:</p>
+<h4 id="-installation-de-loutil-virtualenv"><strong>-Installation de l'outil  <code>virtualenv</code>:</strong></h4>
+<p>Si vous n'avez pas déjà virtualenv installé sur votre système, vous pouvez l'installer en utilisant pip, qui est l'outil de gestion de paquets Python.
+Ouvrez un terminal et exécutez la commande suivante :
+<code>pip install virtualenv</code></p>
+<h4 id="-creation-de-lenvironnement-virtuel"><strong>-Création de l'environnement virtuel:</strong></h4>
+<p>Dans le répertoire racine de votre projet, créez
+un environnement virtuel en utilisant virtualenv.
+Remplacez <strong>nom_env</strong> par le nom que vous
+souhaitez donner à votre environnement virtuel : virtualenv nom_env. Cela créera un dossier
+avec le nom de votre environnement virtuel contenant une installation Python propre et
+isolée</p>
+<h4 id="-activation-de-lenvironnement-virtuel"><strong>-Activation de l'environnement virtuel:</strong></h4>
+<p>Après avoir créé l'environnement virtuel, vous
+devez l'activer. Selon votre système d'exploitation, la commande d'activation varie.<br>
+<strong>Sur Windows: <code>nom_env\Scripts\activate.</code></strong><br>
+<strong>Sur macOS ou Linux: <code>source nom_env/bin/activate</code></strong></p>
+<h3 id="2-installation-backend">2. Installation Backend</h3>
+<h4 id="-installation-de-flask"><strong>-Installation de Flask:</strong></h4>
+<p>Dans l'environnement virtuel activé avant, utiliser lacommande suivante pour installer flask: <code>pip install flask</code></p>
+<h4 id="-installation-des-dependances-python"><strong>-Installation des dépendances Python:</strong></h4>
+<p>Utilisez pip pour installer les packages
+Python nécessaires. Dans ce contexte, vous aurez probablement besoin de packages tels
+que <strong>Flask</strong>, <strong>NumPy</strong>, <strong>Torch</strong>, <strong>vedo</strong>, <strong>Pandas</strong>, <strong>Spicy</strong>... Exemple: <code>pip install flask numpy torch</code>.</p>
+<p>Pour lancer le serveur Backend, il faut accéder au dossier de backend, et puis exécuter la
+commande <code>python app.py</code></p>
+<h3 id="3-installation-frontend">3. Installation Frontend</h3>
+<h4 id="-installation-de-nodejs-et-npm"><strong>- Installation de Node.js et npm</strong></h4>
+<p>Premièrement, il faut télécharger le fichier Windows
+Installer(.msi) ou macOS Installer(.pkg), puis terminer le processus d' installation et la lancer.</p>
+<p>Pour lancer le serveur Frontend, il faut accéder au dossier de fronted et exécuter la
+commande <code>npm start</code>.</p>
+<h2 id="frontend">Frontend</h2>
+<p>Cette partie est consacré pour entammer la partie Fontend de notre projet pour aider mieux à sa comprehension</p>
+<h3 id="1structure-du-frontend">1.Structure du Frontend</h3>
+<p>l'arbrorescente du Frontend est la suivante:</p>
+<p><img alt="Image title" src="../arbore.jpeg" /></p>
+<h4 id="vue-densemble">Vue d'ensemble</h4>
+<p>-node modules: 
+  Ce répertoire contient toutes les dépendances externes installées pour le projet à l'aide de npm ou yarn. 
+      <code>npm install</code></p>
+<p>-public: 
+Ce répertoire contient les fichiers statiques et publics du projet, tels que les fichiers HTML de base.</p>
+<p>-src: 
+C'est le répertoire principal du projet contenant le code source.</p>
+<p>assets: Ce répertoire contient des fichiers statiques utilisés dans l'application, tels que les polices (font) et les images (img).</p>
+<p>components: Ce répertoire contient des composants React réutilisables utilisés pour construire l'interface utilisateur de l'application.</p>
+<p>About.js: Un composant qui affiche des informations sur l'application ou l'équipe derrière le projet.</p>
+<p>Banner.js: Un composant qui affiche  un texte  et une image animé. </p>
+<p>Card.js: Un composant qui représente une carte ou un élément de contenu pouvant être utilisé pour afficher des informations.</p>
+<p>Contact.js: Un composant qui affiche un formulaire pour contacter l'équipe de développement.</p>
+<p>Footer.js : Un composant qui représente le pied de page de l'application, généralement avec des liens et des informations de copyright.</p>
+<p>NavBar.js: Un composant qui représente la barre de navigation de l'application, généralement avec des liens vers les différentes sections du site.</p>
+<p>Prediction.js: Un composant qui permet à l'utilisateur de télécharger un fichier, de le téléverser vers un serveur, d'obtenir une prédiction, de télécharger le résultat et d'afficher le résultat avec le composant Vis.</p>
+<p>Qui utilise le Hooks <code>UseState</code> pour gérer plusieurs états, tels que selectedFile, predictionSuccess, predictionMessage, etc. Ces états sont utilisés pour suivre et mettre à jour l'état de la prédiction.
+            Dans ce composant il existe 3 fonctions fondamentales :</p>
+<pre><code>           1- `HandleFileChange`: appelé lorsque l'utilisateur sélectionne le fichier a segmenté et elle met à jour l'état `selectedFile` avec le fichier sélectionné.
+
+           2- `HandleUpload `:est appelée lorsque l'utilisateur clique sur le bouton "Predict". Elle envoie le fichier téléchargé vers un serveur distant à l'aide d'une requête HTTP POST en utilisant la bibliothèque axios
+
+
+            ``` 
+              const response = await axios.post('http://127.0.0.1:5000/predict', formData, {
+             responseType: 'blob',
+              });
+          //  En cas de réussite, elle met à jour les états predictionSuccess, predictionMessage, et predictionFileURL pour afficher le résultat de la prédiction.
+             ```
+
+          3- `handleDownload`: appelée lorsque l'utilisateur clique sur le bouton "Download the VTP file". Elle permet de télécharger le fichier résultant de la prédiction.
+</code></pre>
+<p>et en fin la fonction  <code>scrollToVis</code> : Cette fonction fait défiler la page vers le composant Vis qui affiche la visualisation résultante à l'aide de VTk.js</p>
+<p>vis.js : Un composant chargé pour la visualisation des données résultantes de la prédiction, en utilisant la bibliothèque vtk.js à partir des données reçues.</p>
+<p>En résumé, ce composant  offre des fonctionnalités pour personnaliser la visualisation, ajuster les paramètres de représentation,  à l'aide de divers fonction telle que <strong>createViewer</strong> , <strong>createPipeline</strong> , <strong>updateRepresentation</strong>
+            ** , <strong>updateOpacity</strong> ..</p>
+<h3 id="2interface-utilisateur">2.Interface Utilisateur</h3>
+<h5 id="page-daccueil">Page d'Accueil</h5>
+<p><img alt="Image title" src="../accuiel.jpeg" /></p>
+<h5 id="page-dinformations">Page d'informations</h5>
+<p><img alt="Image title" src="../info.png" /></p>
+<p><img alt="Image title" src="../info1.png" /></p>
+<h5 id="page-de-contact">Page de contact</h5>
+<p><img alt="Image title" src="../contact.jpeg" /></p>
+<h5 id="page-de-segmentation">Page de Segmentation.</h5>
+<p><img alt="Image title" src="../predict.png" /></p>
+<h2 id="backend">backend</h2>
+<h3 id="les-outils-necessaires">lES OUTILS NECESSAIRES</h3>
+<h4 id="1-importations-des-bibliotheques">1. Importations des bibliothèques</h4>
+<p>Liste des bibliothèques importées dans le code, Il est important de noter que meshsegnet et losses_and_metrics_for_mesh sont des fichiers personnalisés qui sont déjà utilisés dans l'entraînement du modèle .</p>
+<pre><code class="language-python">import os
+from meshsegnet import *
+import vedo
+from losses_and_metrics_for_mesh import *
+from scipy.spatial import distance_matrix
+from flask import Flask, request, send_from_directory, send_file
+from flask_cors import CORS
+</code></pre>
+<p><code>os</code>: Pour effectuer des opérations liées au système de fichiers.
+meshsegnet: Importe les modules personnalisés du fichier meshsegnet. Ce fichier contient  des définitions de modèles ou d'autres fonctions spécifiques à l'application.</p>
+<p><code>vedo</code>: Une bibliothèque pour la visualisation de maillages 3D. Il est utilisé pour afficher des visualisations 3D.</p>
+<p><code>losses_and_metrics_for_mesh</code>: Importe les modules personnalisés du fichier losses_and_metrics_for_mesh. Ce fichier contient  des fonctions pour calculer des métriques ou des pertes spécifiques à l'application.</p>
+<p><code>scipy.spatial.distance_matrix</code>: Une fonction pour calculer des matrices de distance spatiale.</p>
+<p><code>flask</code>: Un framework web Python pour créer des applications web. Il est utilisé pour créer une application web Flask.</p>
+<p><code>flask_cors</code>: Une extension Flask pour gérer la politique CORS (Cross-Origin Resource Sharing). Elle permet à l'application d'accepter des requêtes depuis différents domaines.</p>
+<h4 id="2-configuration-de-lapplication-flask">2. Configuration de l'application Flask</h4>
+<p>L'application Flask est configurée en utilisant les lignes de code suivantes :</p>
+<pre><code class="language-python">app = Flask(__name__, static_folder='C:/Users/adnane/Desktop/Stage3D/frontend/build', static_url_path='/')
+CORS(app)
+</code></pre>
+<p><code>'__name__ '</code>: Il s'agit d'un paramètre spécial qui indique le nom du module ou du package actuel. Cela est généralement utilisé pour aider Flask à déterminer les chemins vers les fichiers statiques et les templates.
+<code>static_folder</code>: Ce paramètre spécifie le dossier où les fichiers statiques de l'application sont stockés. Dans ce cas, les fichiers statiques sont situés dans le répertoire 'C:/Users/adnane/Desktop/Stage3D/frontend/build'.</p>
+<p><code>static_url_path</code> : Ce paramètre définit le chemin d'accès URL sous lequel les fichiers statiques seront accessibles. Dans ce cas, les fichiers statiques sont accessibles sous le chemin URL '/'.</p>
+<p><code>CORS(app)</code> : Cette ligne de code active la prise en charge de CORS (Cross-Origin Resource Sharing) pour l'application Flask. CORS permet à des ressources Web d'être chargées à partir d'un domaine différent de celui de l'application, ce qui est souvent nécessaire lorsque l'application Flask communique avec des clients Web sur des domaines différents. Cette activation de CORS autorise des requêtes provenant de domaines externes à accéder aux ressources de l'application Flask.</p>
+<h4 id="3-variables-globales">3. Variables globales</h4>
+<p>Ce bloc de code définit un ensemble de variables globales utilisées dans l'application Flask. </p>
+<pre><code>upsampling_method = 'KNN'
+model_path = './models'
+model_name = 'MeshSegNet_Max_15_classes_72samples_lr1e-2_best.zip'
+mesh_path = './data_test'  # need to define
+sample_filename = &quot;&quot;
+output_path = './outputs'
+if not os.path.exists(output_path):
+os.mkdir(output_path)
+num_classes = 15
+num_channels = 15
+device = torch.device('cpu')
+
+</code></pre>
+<p><code>upsampling_method</code>: Cette variable est initialisée avec la chaîne de caractères 'KNN', ce qui suggère qu'elle est utilisée pour spécifier une méthode d'upsampling. Cela peut être une indication que l'application effectue une certaine forme de traitement de données ou d'interpolation, peut-être dans le contexte de données 3D.</p>
+<p><code>model_path</code>: Cette variable contient un chemin relatif ('./models') qui indique le répertoire où sont stockés les modèles. Il semble que l'application utilise des modèles pré-entraînés pour effectuer des prédictions ou des classifications.</p>
+<p><code>model_name</code>: Cette variable contient le nom du modèle spécifique ('MeshSegNet_Max_15_classes_72samples_lr1e-2_best.zip'). Il s'agit probablement du nom du modèle pré-entraîné que l'application chargera pour effectuer des opérations de prédiction ou de classification.</p>
+<p><code>mesh_path</code>: Cette variable contient un chemin relatif ('./data_test') qui indique le répertoire où se trouvent des données mesh ou des fichiers 3D. Cependant, la variable est laissée non définie ('need to define'), ce qui signifie que le chemin réel doit être spécifié ultérieurement.</p>
+<p><code>sample_filename</code>: Cette variable est initialisée avec une chaîne de caractères vide ('""'). Il semble que cette variable sera utilisée pour stocker le nom de fichier d'un échantillon ou d'une donnée mesh spécifique.</p>
+<p><code>output_path</code>: Cette variable contient un chemin relatif ('./outputs') qui indique le répertoire où les résultats de l'application seront stockés. Si le répertoire n'existe pas, le code crée ce répertoire à l'aide de os.mkdir(output_path).</p>
+<p><code>num_classes</code> : Cette variable est initialisée à 15. Elle semble indiquer le nombre de classes ou de catégories différentes que le modèle ou l'application traitera. Dans le contexte de l'apprentissage automatique, cela peut signifier qu'il y a 15 classes différentes à prédire ou à classer.</p>
+<p><code>num_channels</code>: Cette variable est également initialisée à 15. Le terme "channels" (canaux) est généralement utilisé dans le contexte de données multidimensionnelles, comme les images ou les données 3D. Cela peut signifier qu'il y a 15 canaux ou 15 caractéristiques différentes dans les données d'entrée ou dans le modèle.</p>
+<p><code>device</code>: Cette variable est initialisée avec l'objet torch.device('cpu'), ce qui signifie que l'application ou le modèle sera exécuté sur le processeur central (CPU) de l'ordinateur plutôt que sur un processeur graphique (GPU). L'utilisation du CPU est courante lorsque les ressources GPU ne sont pas disponibles ou nécessaires pour des tâches spécifiques.</p>
+<h3 id="process-de-lapplication">PROCESS DE L'APPLICATION</h3>
+<h4 id="1-chargement-du-modele-pre-entraine">1. Chargement du modèle pré-entraîné</h4>
+<p>Ces lignes de code concernent la création et le chargement d'un modèle d'apprentissage automatique.</p>
+<pre><code>model = MeshSegNet(num_classes=num_classes, num_channels=num_channels).to(device, dtype=torch.float)
+checkpoint = torch.load(os.path.join(model_path, model_name), map_location='cpu')
+model.load_state_dict(checkpoint['model_state_dict'])
+del checkpoint
+model = model.to(device, dtype=torch.float)
+</code></pre>
+<p><code>model = MeshSegNet(num_classes=num_classes, num_channels=num_channels).to(device, dtype=torch.float)</code> : Cette ligne crée une instance du modèle MeshSegNet avec les paramètres num_classes et num_channels précédemment définis. Le modèle est ensuite déplacé sur le dispositif spécifié (CPU dans ce cas) et son type de données est défini sur torch.float.</p>
+<p><code>checkpoint = torch.load(os.path.join(model_path, model_name), map_location='cpu') :</code> Cette ligne charge un checkpoint (une sauvegarde) du modèle depuis un fichier spécifié par model_path et model_name. Le paramètre map_location='cpu' indique que le modèle doit être chargé sur le CPU, même s'il a été enregistré sur un GPU.</p>
+<p><code>model.load_state_dict(checkpoint['model_state_dict'])</code>: Cette ligne charge les poids et les paramètres du modèle à partir du dictionnaire model_state_dict contenu dans le checkpoint. Cela initialise effectivement le modèle avec les poids pré-entraînés.</p>
+<p><code>del checkpoint</code>: Cette ligne supprime l'objet checkpoint de la mémoire une fois que les poids du modèle ont été chargés. Cela libère de la mémoire car le checkpoint n'est plus nécessaire.</p>
+<p><code>model = model.to(device, dtype=torch.float) :</code>Cette ligne déplace à nouveau le modèle sur le CPU et définit son type de données sur torch.float. Bien que cette ligne semble redondante par rapport à la première ligne, elle est importante car le chargement du checkpoint peut potentiellement modifier le dispositif sur lequel le modèle est situé, il est donc préférable de s'assurer qu'il est sur le CPU à la fin du chargement.</p>
+<h4 id="2-fonction-de-traitement-de-la-prediction">2. Fonction de traitement de la prédiction</h4>
+<p>La fonction process_prediction(uploaded_file) être responsable du traitement des fichiers de prédiction envoyés via une requête POST.</p>
+<pre><code>        uploaded_file = request.files['meshFile']
+        if uploaded_file.filename.lower().endswith('.vtp'):
+            i_sample = '1.vtp'
+        elif uploaded_file.filename.lower().endswith('.obj'):
+            i_sample = '1.obj'
+        print('Predicting Sample filename: {}'.format(i_sample))
+        mesh = vedo.load(os.path.join(mesh_path, i_sample))
+</code></pre>
+<p><code>uploaded_file = request.files['meshFile'] :</code> Cette ligne récupère le fichier téléchargé à partir de la requête HTTP en utilisant la clé 'meshFile'. La variable uploaded_file contient maintenant les informations sur le fichier téléchargé.</p>
+<p><code>if uploaded_file.filename.lower().endswith('.vtp'):</code>: Cette condition vérifie si le nom du fichier téléchargé se termine par l'extension .vtp. Elle utilise uploaded_file.filename pour obtenir le nom du fichier, le convertit en minuscules avec .lower(), puis utilise .endswith('.vtp') pour vérifier l'extension. Si c'est le cas, la variable i_sample est définie sur '1.vtp'.</p>
+<p><code>elif uploaded_file.filename.lower().endswith('.obj'):</code> : Sinon, cette condition vérifie si le nom du fichier téléchargé se termine par l'extension .obj. Si c'est le cas, la variable i_sample est définie sur '1.obj'.</p>
+<p><code>print('Predicting Sample filename: {}'.format(i_sample)) :</code> Cette ligne affiche le nom du fichier i_sample, qui sera utilisé pour la prédiction. Cela permet de suivre quel fichier est en cours de traitement.</p>
+<p><code>mesh = vedo.load(os.path.join(mesh_path, i_sample)) :</code>Cette ligne charge le fichier mesh à partir du chemin complet du fichier i_sample, en utilisant la bibliothèque vedo. Le mesh chargé est stocké dans la variable mesh pour être utilisé dans la suite du code.</p>
+<pre><code>        if mesh.ncells &gt; 10000:
+            print('\tDownsampling...')
+            target_num = 10000
+            ratio = target_num / mesh.ncells  # calculate ratio
+            mesh_d = mesh.clone()
+            mesh_d.decimate(fraction=ratio)
+            predicted_labels_d = np.zeros([mesh_d.ncells, 1], dtype=np.int32)
+        else:
+            mesh_d = mesh.clone()
+            predicted_labels_d = np.zeros([mesh_d.ncells, 1], dtype=np.int32)
+
+</code></pre>
+<p><code>if mesh.ncells &gt; 10000:</code> : Cette condition vérifie si le nombre de cellules dans le mesh (mesh.ncells) est supérieur à 10 000. Si c'est le cas, cela signifie que le mesh est trop dense, et un échantillonnage est nécessaire pour réduire sa complexité.</p>
+<p><code>print('\tDownsampling...')</code> Si l'échantillonnage est nécessaire, cette ligne affiche un message "Downsampling..." pour indiquer qu'un échantillonnage est en cours.</p>
+<p><code>target_num = 10000</code> Cette ligne définit le nombre cible de cellules après l'échantillonnage. Dans ce cas, le nombre cible est de 10 000 cellules.</p>
+<p><code>ratio = target_num / mesh.ncells</code> Cette ligne calcule le ratio entre le nombre cible de cellules (target_num) et le nombre de cellules actuel du mesh (mesh.ncells). Ce ratio sera utilisé pour déterminer combien de cellules doivent être conservées lors de l'échantillonnage.</p>
+<p><code>mesh_d = mesh.clone() :</code> Cette ligne crée une copie du mesh d'origine en utilisant la méthode .clone(). La copie sera utilisée pour effectuer l'échantillonnage tout en préservant le mesh d'origine.</p>
+<p><code>mesh_d.decimate(fraction=ratio)</code> : Cette ligne effectue l'échantillonnage (downsampling) du mesh en réduisant le nombre de cellules en fonction du ratio calculé. La méthode .decimate() réduit la complexité du mesh en supprimant certaines cellules tout en préservant la structure globale du mesh.</p>
+<p><code>predicted_labels_d = np.zeros([mesh_d.ncells, 1], dtype=np.int32) :</code> Cette ligne crée un tableau numpy rempli de zéros de taille [mesh_d.ncells, 1]. Ce tableau sera utilisé pour stocker les étiquettes prédites après la prédiction du modèle. La taille du tableau est basée sur le nombre de cellules du mesh échantillonné (mesh_d.ncells).
+<code>mesh_d = mesh.clone()</code> : Dans ce cas, une copie du mesh d'origine est également créée, mais aucun échantillonnage n'est effectué. Le mesh échantillonné (mesh_d) est identique au mesh d'origine, et le tableau predicted_labels_d est également initialisé à zéro.</p>
+<pre><code>        print('\tPredicting...')
+        points = mesh_d.points()
+        mean_cell_centers = mesh_d.center_of_mass()
+        points[:, 0:3] -= mean_cell_centers[0:3]
+        ids = np.array(mesh_d.faces())
+        cells = points[ids].reshape(mesh_d.ncells, 9).astype(dtype='float32')
+        mesh_d.compute_normals()
+        normals = mesh_d.celldata['Normals']
+        barycenters = mesh_d.cell_centers()  # don't need to copy
+        barycenters -= mean_cell_centers[0:3]
+</code></pre>
+<p><code>print('\tPredicting...')</code> Cette ligne affiche un message "Predicting..." pour indiquer que le processus de prédiction commence.</p>
+<p><code>points = mesh_d.points()</code>  Cette ligne extrait les coordonnées des points du mesh échantillonné et les stocke dans la variable points.</p>
+<p>mean_cell_centers = mesh_d.center_of_mass() ` Cette ligne calcule le centre de masse (barycentre) du mesh échantillonné mesh_d en utilisant la méthode center_of_mass(). Le résultat est stocké dans mean_cell_centers.</p>
+<p><code>points[:, 0:3] -= mean_cell_centers[0:3]</code> Cette ligne centre le mesh autour de son centre de masse en soustrayant les coordonnées du centre de masse mean_cell_centers des coordonnées de chaque point dans points. Cela permet de ramener le centre du mesh à l'origine (0, 0, 0).</p>
+<p><code>ids = np.array(mesh_d.faces())</code> Cette ligne extrait les indices des faces du mesh échantillonné et les stocke dans ids.</p>
+<p><code>cells = points[ids].reshape(mesh_d.ncells, 9).astype(dtype='float32')</code> Cette ligne utilise les indices des faces (ids) pour extraire les coordonnées des sommets des triangles qui composent le mesh échantillonné. Les coordonnées sont ensuite mises en forme dans un tableau de forme [mesh_d.ncells, 9] où chaque ligne représente les coordonnées des trois sommets d'un triangle. Le tableau est converti en type de données float32.</p>
+<p><code>mesh_d.compute_normals()</code> : Cette ligne calcule les normales (vecteurs perpendiculaires) des faces du mesh échantillonné mesh_d en utilisant la méthode compute_normals(). Les normales sont utilisées pour déterminer l'orientation des surfaces.</p>
+<p><code>normals = mesh_d.celldata['Normals']</code> Cette ligne extrait les normales calculées à partir du mesh échantillonné mesh_d et les stocke dans la variable normals.</p>
+<p><code>barycenters = mesh_d.cell_centers()</code> Cette ligne calcule les centres de chaque cellule (triangle) dans le mesh échantillonné mesh_d en utilisant la méthode cell_centers(). Ces centres de cellules sont stockés dans barycenters.</p>
+<p><code>barycenters -= mean_cell_centers[0:3]</code> Cette ligne centre également les centres de cellules autour du centre de masse du mesh en soustrayant les coordonnées du centre de masse mean_cell_centers des coordonnées des centres de cellules. Cela garantit que le mesh et les centres de cellules sont centrés autour de l'origine.</p>
+<pre><code>        A_S = np.zeros([X.shape[0], X.shape[0]], dtype='float32')
+        A_L = np.zeros([X.shape[0], X.shape[0]], dtype='float32')
+        D = distance_matrix(X[:, 9:12], X[:, 9:12])
+        A_S[D &lt; 0.1] = 1.0
+        A_S = A_S / np.dot(np.sum(A_S, axis=1, keepdims=True), np.ones((1, X.shape[0])))
+        A_L[D &lt; 0.2] = 1.0
+        A_L = A_L / np.dot(np.sum(A_L, axis=1, keepdims=True), np.ones((1, X.shape[0])))
+</code></pre>
+<p><code>A_S = np.zeros([X.shape[0], X.shape[0]], dtype='float32') :</code> Cela crée une matrice carrée A_S remplie de zéros, avec une dimension égale au nombre de points dans le mesh. Cette matrice représente l'adjacence à courte portée.</p>
+<p><code>A_L = np.zeros([X.shape[0], X.shape[0]], dtype='float32') :</code>De même, cela crée une matrice carrée A_L remplie de zéros, avec la même dimension que A_S. Cette matrice représente l'adjacence à longue portée.</p>
+<p><code>D = distance_matrix(X[:, 9:12], X[:, 9:12]) :</code> Cela calcule une matrice de distances D en utilisant la fonction distance_matrix de SciPy. Les colonnes de X sont extraites pour obtenir les coordonnées 3D des points (9:12 correspond aux colonnes des coordonnées dans X).</p>
+<p><code>A_S[D &lt; 0.1] = 1.0 :</code> Cette ligne met à 1.0 toutes les entrées de la matrice A_S où les distances dans D sont inférieures à 0,1 unité. Cela signifie que les points situés à moins de 0,1 unité les uns des autres sont considérés comme voisins à courte portée.</p>
+<p><code>A_S = A_S / np.dot(np.sum(A_S, axis=1, keepdims=True), np.ones((1, X.shape[0]))) :</code> Cette ligne normalise la matrice A_S en divisant chaque ligne par la somme de ses éléments. Cela garantit que chaque ligne de la matrice A_S représente une distribution de probabilité sur les voisins à courte portée pour chaque point.</p>
+<p><code>A_L[D &lt; 0.2] = 1.0 :</code> De manière similaire à A_S, cette ligne met à 1.0 toutes les entrées de la matrice A_L où les distances dans D sont inférieures à 0,2 unité. Cela signifie que les points situés à moins de 0,2 unité les uns des autres sont considérés comme voisins à longue portée.</p>
+<p><code>A_L = A_L / np.dot(np.sum(A_L, axis=1, keepdims=True), np.ones((1, X.shape[0])))</code> : Comme pour A_S, cette ligne normalise la matrice A_L pour obtenir une distribution de probabilité sur les voisins à longue portée pour chaque point.</p>
+<pre><code>        X = X.transpose(1, 0)
+        X = X.reshape([1, X.shape[0], X.shape[1]])
+        X = torch.from_numpy(X).to(device, dtype=torch.float)
+        A_S = A_S.reshape([1, A_S.shape[0], A_S.shape[1]])
+        A_L = A_L.reshape([1, A_L.shape[0], A_L.shape[1]])
+        A_S = torch.from_numpy(A_S).to(device, dtype=torch.float)
+        A_L = torch.from_numpy(A_L).to(device, dtype=torch.float)
+        tensor_prob_output = model(X, A_S, A_L).to(device, dtype=torch.float)
+        patch_prob_output = tensor_prob_output.cpu().numpy()
+        for i_label in range(num_classes):
+            predicted_labels_d[np.argmax(patch_prob_output[0, :], axis=-1) == i_label] = i_label
+</code></pre>
+<p><code>X = X.transpose(1, 0)</code> : Cette ligne transpose la matrice X de sorte que les dimensions 0 et 1 soient échangées. Ensuite, la matrice X est réorganisée pour avoir une dimension supplémentaire à l'avant (ajoutant un axe) en utilisant reshape(). Ces étapes sont nécessaires pour préparer les données d'entrée du modèle de manière appropriée.</p>
+<p><code>X = torch.from_numpy(X).to(device, dtype=torch.float)</code> : Cette ligne convertit la matrice NumPy X en un tenseur PyTorch et le déplace vers le périphérique spécifié par device (CPU ou GPU) en utilisant .to(). De plus, le type de données du tenseur est défini sur torch.float.</p>
+<p><code>A_S = A_S.reshape([1, A_S.shape[0], A_S.shape[1]])</code>: Cette ligne réorganise la matrice NumPy A_S pour avoir une dimension supplémentaire à l'avant (ajoutant un axe). Cela est nécessaire pour préparer les données d'adjacence à être compatibles avec le modèle.</p>
+<p><code>A_L = A_L.reshape([1, A_L.shape[0], A_L.shape[1]])</code>: De même, cette ligne réorganise la matrice NumPy A_L pour avoir une dimension supplémentaire à l'avant.</p>
+<p><code>A_S = torch.from_numpy(A_S).to(device, dtype=torch.float)</code>: Comme précédemment, cette ligne convertit la matrice NumPy A_S en un tenseur PyTorch et le déplace vers le périphérique spécifié par device en définissant le type de données sur torch.float.</p>
+<p><code>A_L = torch.from_numpy(A_L).to(device, dtype=torch.float)</code> : Cette ligne fait la même chose pour la matrice NumPy A_L.</p>
+<p><code>tensor_prob_output = model(X, A_S, A_L).to(device, dtype=torch.float)</code>: Cette ligne effectue l'inférence du modèle en passant les données d'entrée X, A_S, et A_L au modèle model. Le résultat est un tenseur PyTorch contenant les probabilités prédites pour chaque classe. Le tenseur résultant est également déplacé vers le périphérique spécifié et son type de données est fixé à torch.float.</p>
+<p><code>patch_prob_output = tensor_prob_output.cpu().numpy()</code>: Cette ligne convertit le tenseur PyTorch tensor_prob_output en un tableau NumPy en utilisant .cpu().numpy(). Cela est nécessaire car les opérations ultérieures seront effectuées en utilisant NumPy.</p>
+<p><code>for i_label in range(num_classes) :</code> Cette boucle itère sur toutes les classes possibles (num_classes) pour effectuer des opérations spécifiques pour chaque classe.</p>
+<pre><code>        mesh2 = mesh_d.clone()
+        mesh2.celldata['Label'] = predicted_labels_d
+        output_file_path = os.path.join(output_path, '1.vtp')
+        vedo.write(mesh2, output_file_path)
+        print('Sample filename: {} completed'.format(i_sample))
+        return output_file_path
+</code></pre>
+<p><code>mesh2 = mesh_d.clone()</code> Cette ligne crée une copie du mesh échantillonné mesh_d en utilisant la méthode clone(). La nouvelle copie est stockée dans mesh2.</p>
+<p><code>mesh2.celldata['Label'] = predicted_labels_d</code>Cette ligne ajoute des données de cellule appelées 'Label' à mesh2. Les valeurs de 'Label' sont définies à partir du tableau predicted_labels_d, qui contient les étiquettes prédites pour chaque cellule du mesh. Ainsi, chaque cellule du mesh est étiquetée avec la classe prédite.</p>
+<p><code>output_file_path = os.path.join(output_path, '1.vtp')</code> Cette ligne définit le chemin du fichier de sortie au format VTP (VTK Polygonal Data). Le fichier sera enregistré dans le répertoire de sortie spécifié par output_path avec le nom '1.vtp'.</p>
+<p><code>vedo.write(mesh2, output_file_path)</code> Cette ligne écrit le mesh mesh2, avec les données de cellule 'Label' ajoutées, dans le fichier de sortie spécifié par output_file_path. La fonction vedo.write() est utilisée pour effectuer cette opération.</p>
+<p><code>print('Sample filename: {} completed'.format(i_sample))</code> Cette ligne affiche un message indiquant que la prédiction pour l'échantillon spécifique (déterminé par i_sample) est terminée.</p>
+<p><code>return output_file_path</code> Cette ligne retourne le chemin du fichier de sortie au format VTP généré. Ce chemin sera utilisé pour envoyer le fichier VTP en réponse à la requête POST.</p>
+<h4 id="3-telechargement-de-fichiers">3. Téléchargement de fichiers</h4>
+<p>La fonction download(uploaded_file)  être utilisée pour sauvegarder un fichier téléchargé sur le système de fichiers.</p>
+<pre><code>    def download(uploaded_file):
+       if uploaded_file.filename != '':
+           if uploaded_file.filename.lower().endswith('.vtp'):
+            filename = '1.vtp'
+           elif uploaded_file.filename.lower().endswith('.obj'):
+            filename = '1.obj'
+
+        uploaded_file.save(os.path.join(mesh_path, filename))
+        global sample_filenames
+        sample_filenames = [filename]
+</code></pre>
+<p><code>La fonction download(uploaded_file)</code>  être utilisée pour sauvegarder un fichier téléchargé sur le système de fichiers.
+if uploaded_file.filename != '': : Cette condition vérifie si le nom du fichier téléchargé (uploaded_file.filename) n'est pas une chaîne vide, ce qui signifie qu'un fichier a été téléchargé.</p>
+<p><code>if uploaded_file.filename.lower().endswith('.vtp'):</code> : Cette condition vérifie si le nom du fichier téléchargé a une extension .vtp. Si c'est le cas, la variable filename est définie sur '1.vtp'. Sinon, si l'extension est .obj, la variable filename est définie sur '1.obj'.</p>
+<p><code>uploaded_file.save(os.path.join(mesh_path, filename)) :</code> Cette ligne enregistre le fichier téléchargé dans le répertoire mesh_path avec le nom de fichier filename. Cela permet de stocker le fichier sur le système de fichiers.</p>
+<p><code>global sample_filenames :</code> Cette ligne indique que vous allez utiliser une variable globale sample_filenames pour stocker le nom du fichier. Cette variable semble être utilisée ailleurs dans le code.</p>
+<p><code>sample_filenames = [filename] :</code> Cette ligne crée une liste sample_filenames contenant le nom du fichier filename. Cela peut être utile pour garder une trace des fichiers téléchargés pour le traitement ultérieur.</p>
+<h2 id="le-benchmarking-des-technologies-utilisees">Le Benchmarking des Technologies Utilisées</h2>
+<h3 id="1-flask-vs-django-pour-le-backend">1. Flask vs. Django (pour le backend)</h3>
+<ul>
+<li>
+<p>Flask : Flask est un framework Python léger et minimaliste pour la création d'API web. Il convient aux applications de petite à moyenne taille.  </p>
+</li>
+<li>
+<p>Django : Django est un framework web Python plus complet qui offre plus de fonctionnalités intégrées pour le développement web. Il est idéal pour les applications web complexes.  </p>
+</li>
+<li>
+<p>Benchmark : Flask, connu pour sa légèreté et sa flexibilité exceptionnelle, a été choisi pour notre projet. Bien que Django offre une multitude de fonctionnalités intégrées qui améliorent la productivité, l'architecture légère et flexible de Flask correspondait davantage à nos besoins spécifiques.</p>
+</li>
+</ul>
+<h3 id="2-reactjs-vs-angular-vs-vuejs-pour-le-frontend">2. React.js vs. Angular vs. Vue.js (pour le frontend)</h3>
+<ul>
+<li>
+<p>React.js : React sont des bibliothèques JavaScript pour la création d'interfaces utilisateur interactives. Elles se concentrent sur la création de composants réutilisables.  </p>
+</li>
+<li>
+<p>Angular : Angular est un framework JavaScript complet pour le développement d'applications web. Il fournit une structure plus stricte et des fonctionnalités complètes.    </p>
+</li>
+<li>
+<p>Vue.js : Vue est un framework JavaScript progressif qui se situe entre React et Angular en termes de complexité.  </p>
+</li>
+<li>
+<p>Benchmark: En ce qui concerne React, il est largement adopté pour son approche conviviale et la robustesse de sa communauté de développeurs. En revanche, Angular convient mieux aux applications d'entreprise complexes. Vue constitue un choix intermédiaire, offrant convivialité pour les projets de petite à moyenne envergure. Étant donné la prévalence de la popularité de React.js, il présente l'avantage de disposer de solutions facilement disponibles pour résoudre les défis de codage, grâce à son vaste support communautaire.  </p>
+</li>
+</ul>
+<h3 id="3-vtkjs-vs-threejs-pour-la-visualisation-3d">3. VTK.js vs. Three.js (pour la visualisation 3D) :</h3>
+<ul>
+<li>
+<p>VTK.js : VTK.js est une bibliothèque JavaScript basée sur le Visualization Toolkit (VTK) pour la visualisation 3D dans le navigateur.   </p>
+</li>
+<li>
+<p>Three.js : Three.js est une bibliothèque JavaScript populaire pour la création d'applications de visualisation 3D en temps réel.    </p>
+</li>
+<li>
+<p>Benchmark: Le choix entre VTK.js et Three.js dépend des caractéristiques particulières de votre application. VTK.js convient bien lorsque des capacités avancées de traitement de données scientifiques et médicales sont nécessaires, tandis que Three.js offre une plus grande polyvalence pour des visualisations 3D générales. Étant donné que notre projet implique une application médicale avec des besoins spécifiques de traitement des données, notre choix s'est porté sur VTK.js.</p>
+</li>
+</ul>
+<h2 id="visualisation-3d-avec-vtkjs">visualisation 3D avec VTK.js</h2>
+<h3 id="1-qui-ce-que-cest-rt-quelle-utilite">1. Qui ce que c'est rt quelle utilité?</h3>
+<p>VTK.js, ou Visualization Toolkit for JavaScript, est une bibliothèque open source très puissante et polyvalente conçue pour la visualisation 3D dans les applications web. </p>
+<ul>
+<li>Large Écosystème : VTK.js s'appuie sur le célèbre kit de visualisation VTK (Visualization Toolkit) utilisé dans de nombreuses applications scientifiques et industrielles. Cela signifie qu'il bénéficie de nombreuses années de développement, de raffinement et d'une grande communauté d'utilisateurs.  </li>
+<li>Support Multiplateforme : VTK.js est conçu pour être compatible avec une grande variété de navigateurs web modernes, ce qui facilite l'accès aux visualisations 3D sur différentes plates-formes, y compris les ordinateurs de bureau, les tablettes et les appareils mobiles.  </li>
+<li>Personnalisable : L'une des forces de VTK.js réside dans sa capacité à être hautement personnalisable. Vous pouvez créer des visualisations sur mesure en utilisant des composants VTK.js, en ajustant l'apparence, en ajoutant des interactions utilisateur et en adaptant les fonctionnalités aux besoins spécifiques de votre application.  </li>
+<li>Interopérabilité : VTK.js offre des fonctionnalités d'interopérabilité avec d'autres bibliothèques et technologies web couramment utilisées, telles que Three.js et WebGL, ce qui permet d'intégrer facilement des composants 3D dans des applications existantes.  </li>
+<li>Utilisation dans Divers Domaines : VTK.js est largement utilisé dans divers domaines tels que la médecine, la recherche scientifique, l'ingénierie, la géoscience, la visualisation de données et la simulation. Il est particulièrement précieux pour afficher des modèles anatomiques, des simulations numériques, des cartes géographiques et des modèles architecturaux.  </li>
+<li>Documentation Abondante : VTK.js bénéficie d'une documentation détaillée et de nombreux exemples, ce qui facilite l'apprentissage et le développement d'applications de visualisation 3D.  </li>
+<li>Évolutif : La bibliothèque est en constante évolution, avec des mises à jour régulières qui ajoutent de nouvelles fonctionnalités et améliorent les performances.  </li>
+</ul>
+<p>En résumé, VTK.js est un outil précieux pour quiconque souhaite intégrer des visualisations 3D interactives dans des applications web, offrant une flexibilité, une puissance et une compatibilité multiplateforme inégalées.</p>
+<h3 id="2-quels-avantages">2. Quels avantages ?</h3>
+<p>La visualisation 3D avec VTK.js offre une multitude d'avantages captivants pour les professionnels de divers domaines. Tout d'abord, elle permet une représentation tridimensionnelle immersive des données, ce qui facilite la compréhension des structures complexes et des phénomènes spatiaux. Ensuite, VTK.js offre une flexibilité remarquable en permettant la visualisation de données provenant de diverses sources, que ce soit des simulations scientifiques, des scans médicaux, ou des modèles architecturaux. De plus, grâce à sa compatibilité avec les navigateurs web, VTK.js rend la visualisation 3D accessible à un large public, sans nécessiter l'installation de logiciels spécifiques. Enfin, la possibilité d'interagir en temps réel avec les visualisations permet une exploration approfondie des données, favorisant ainsi la prise de décision éclairée dans des domaines tels que la recherche, la médecine, l'ingénierie, et bien d'autres encore. En somme, VTK.js révolutionne la manière dont nous analysons et comprenons les données en offrant une expérience de visualisation 3D immersive, accessible et flexible.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+    
+  </body>
+</html>
